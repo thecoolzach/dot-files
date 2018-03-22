@@ -4,11 +4,9 @@ filetype plugin on
 set number
 set autoindent
 set textwidth=100
-set shiftwidth=2 "sets the auto-indent to just four spaces, instead of a full tab. 
+set shiftwidth=2 "sets the auto-indent to just two spaces, instead of a full tab. 
 set hidden
 syntax enable
-set background=dark
-color solarized
 
 " = Alternate Mappings =
 let mapleader = ','
@@ -47,12 +45,6 @@ Plugin 'reedes/vim-pencil'
 " NERDTree for directory management
 Plugin 'scrooloose/nerdtree'
 
-" Solarized for better colors
-Plugin 'altercation/vim-colors-solarized'
-
-"vimwiki for awesome wiki!
-Plugin 'vimwiki/vimwiki'
-
 "snippet plugins to make editing html and other code faster.
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -60,10 +52,6 @@ Plugin 'garbas/vim-snipmate'
 " Optional:
 Plugin 'honza/vim-snippets'
 
-"emmet-vim allows for awesome html auto-completion
-Plugin 'mattn/emmet-vim'
-"web-api to make custom snippets for emmett
-Plugin 'mattn/webapi-vim'
 "surround makes surrounding with tags easy
 Plugin 'tpope/vim-surround.git'
 
@@ -82,10 +70,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
-" * Emmett Configuration *
-" ************************
-let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.snippets_custom.json')), "\n"))
-
 " Pencil configurations!
 " *********************
 " 
@@ -112,35 +96,3 @@ let g:markdown_syntax_conceal = 0
 " Remappings
 map <F2> :NERDTree<enter>
 
-"*****************************
-"*  Vimwiki Configurations!  *
-"*****************************
-
-let g:vimwiki_list =[
-\{
-\'path': '~/vimwiki',
-\'path_html': '~/vimwiki_html'
-\},
-\{
-\'path': '~/Projects/SSB/ssb-non-dev-resources/wiki',
-\'path_html': '~/Projects/SSB/ssb-non-dev-resources/ssbwiki_html/',
-\'auto_export': 1,
-\'template_path': '~/Projects/SSB/ssb-non-dev-resources/ssbwiki_html/templates',
-\'template_default': 'def_template',
-\'template_ext': '.tpl'
-\},
-\{
-\'path': '~/Projects/SSB/ssb-wiki/',
-\'syntax': 'markdown', 
-\'ext': '.md',
-\'index': 'README'
-\},
-\{
-\ 'path': '~/Projects/EDA/wiki',
-\ 'path_html': '~/Projects/EDA/web'
-\},
-\{
-\ 'path': '~/Projects/Web/angblev/wiki',
-\ 'path_html': '~/Projects/Web/angblev/wiki_web'
-\}
-\]
